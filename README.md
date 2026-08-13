@@ -42,6 +42,7 @@ O sistema permite criar, visualizar, editar, mover e excluir tarefas organizadas
 - Feedback de erros
 - Interface responsiva
 - Integração entre frontend e backend através de API REST
+- Drag and Drop para movimentar tarefas entre as colunas
 
 ---
 
@@ -237,15 +238,13 @@ O componente `App` concentra o estado principal das tarefas e a comunicação co
 
 Cada tarefa possui um `status` que determina em qual coluna ela será exibida:
 
-```text
-todo → A Fazer
-in_progress → Em Progresso
-done → Concluídas
-```
+- `todo` → A Fazer
+- `in_progress` → Em Progresso
+- `done` → Concluídas
+
+As tarefas podem ser movimentadas entre as colunas através dos botões de navegação ou utilizando **Drag and Drop**.
 
 Ao mover uma tarefa, o frontend envia uma requisição `PUT` para atualizar seu status no backend.
-
----
 
 ## User Flow
 
@@ -266,17 +265,3 @@ Em telas maiores, as três colunas são exibidas lado a lado. Em telas menores, 
 ## Limitações
 
 A principal limitação atual é o armazenamento em memória. Ao reiniciar o backend, as tarefas cadastradas são perdidas.
-
-O projeto também utiliza botões para movimentar as tarefas entre as colunas, não possuindo Drag and Drop nesta versão.
-
----
-
-## Possíveis melhorias futuras
-
-- Drag and Drop entre as colunas
-- Persistência das tarefas em banco de dados ou arquivo JSON
-- Testes automatizados
-- Docker
-- Autenticação de usuários
-- Busca e filtros de tarefas
-- Prioridades e datas para as tarefas
