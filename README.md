@@ -210,4 +210,73 @@ API Go
 Armazenamento em memória
 ```
 
-O backend possui configuração de CORS para permitir a comunicação
+O backend possui configuração de CORS para permitir a comunicação com o frontend durante o desenvolvimento.
+
+---
+
+## Decisões técnicas
+
+### Armazenamento em memória
+
+Foi utilizado armazenamento em memória para manter a implementação simples e focada nos requisitos do MVP.
+
+Por esse motivo, as tarefas são perdidas quando o servidor backend é reiniciado.
+
+### Componentização
+
+O frontend foi dividido em componentes para reduzir repetição de código e facilitar a manutenção.
+
+Os principais componentes são:
+
+- `Column`: representa cada coluna do Kanban.
+- `TaskCard`: representa individualmente uma tarefa.
+
+O componente `App` concentra o estado principal das tarefas e a comunicação com a API.
+
+### Movimentação das tarefas
+
+Cada tarefa possui um `status` que determina em qual coluna ela será exibida:
+
+```text
+todo → A Fazer
+in_progress → Em Progresso
+done → Concluídas
+```
+
+Ao mover uma tarefa, o frontend envia uma requisição `PUT` para atualizar seu status no backend.
+
+---
+
+## User Flow
+
+O fluxo principal de utilização da aplicação está representado abaixo:
+
+![User Flow do Mini Kanban](docs/user-flow.png)
+
+---
+
+## Responsividade
+
+A interface foi desenvolvida para se adaptar a diferentes tamanhos de tela.
+
+Em telas maiores, as três colunas são exibidas lado a lado. Em telas menores, elas são reorganizadas verticalmente.
+
+---
+
+## Limitações
+
+A principal limitação atual é o armazenamento em memória. Ao reiniciar o backend, as tarefas cadastradas são perdidas.
+
+O projeto também utiliza botões para movimentar as tarefas entre as colunas, não possuindo Drag and Drop nesta versão.
+
+---
+
+## Possíveis melhorias futuras
+
+- Drag and Drop entre as colunas
+- Persistência das tarefas em banco de dados ou arquivo JSON
+- Testes automatizados
+- Docker
+- Autenticação de usuários
+- Busca e filtros de tarefas
+- Prioridades e datas para as tarefas
