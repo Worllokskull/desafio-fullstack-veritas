@@ -1,0 +1,22 @@
+# Node
+node_modules/
+frontend/node_modules/
+
+# Build do frontend
+frontend/dist/
+
+# Arquivos de ambiente
+.env
+.env.*
+
+# Go
+*.exe
+*.test
+*.out
+
+# VS Code
+.vscode/
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
