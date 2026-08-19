@@ -1,4 +1,4 @@
-# Mini Kanban — Desafio Fullstack Veritas
+# Mini Kanban
 
 Aplicação Full Stack de um quadro Kanban simplificado, desenvolvida como parte do Desafio Fullstack da Veritas.
 
